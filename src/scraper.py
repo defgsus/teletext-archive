@@ -1,5 +1,6 @@
 import os
 import sys
+import glob
 from pathlib import Path
 from typing import Generator, Tuple, Union
 
@@ -54,18 +55,62 @@ class Scraper:
         """
         raise NotImplementedError
 
-    def download(self):
-        os.makedirs(str(self.path()), exist_ok=True)
+    def download(self) -> dict:
+        """
+        Download all pages via `iter_pages` and store to disk
+
+        Returns a small report dict.
+        """
+        report = {
+            "unchanged": 0,
+            "changed": 0,
+            "added": 0,
+            "removed": 0,
+        }
+        received_files = set()
+
+        if not self.path().exists():
+            os.makedirs(str(self.path()))
+            existing_files = set()
+        else:
+            existing_files = {
+                Path(fn)
+                for fn in glob.glob(str(self.path() / f"*.{self.FILE_EXTENSION}"))
+            }
+
         for page_num, sub_page_num, content in self.iter_pages():
-            if content is True:
-                continue
 
             filename = self.path() / (
                 f"{page_num:0{self.NUM_PAGE_DIGITS}}"
                 f"-{sub_page_num:0{self.NUM_SUB_PAGE_DIGITS}}.{self.FILE_EXTENSION}"
             )
+            received_files.add(filename)
+
+            if content is True:
+                report["unchanged"] += 1
+                continue
+
+            if filename.exists():
+                previous_content = filename.read_text()
+                if previous_content == content:
+                    report["unchanged"] += 1
+                    continue
+                else:
+                    report["changed"] += 1
+
             self.log("storing", filename)
             filename.write_text(content)
+            received_files.add(filename)
+
+        report["added"] = len(received_files - existing_files)
+        removed_files = existing_files - received_files
+        report["removed"] = len(removed_files)
+
+        for fn in removed_files:
+            self.log("deleting", fn)
+            os.remove(str(fn))
+
+        return report
 
     def log(self, *args):
         if self.verbose:

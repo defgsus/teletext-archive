@@ -1,5 +1,5 @@
 import re
-from typing import Dict, Generator, Tuple
+from typing import Dict, Generator, Tuple, Union
 
 from ..scraper import Scraper
 
@@ -10,7 +10,7 @@ class NDR(Scraper):
 
     FILE_EXTENSION = "htm"
 
-    def iter_pages(self) -> Generator[Tuple[int, int, str], None, None]:
+    def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         for page_index, num_sub_pages in self._get_pages().items():
             for sub_page_index in range(num_sub_pages):
                 url = f"https://www.ndr.de/public/teletext/{page_index}_{sub_page_index+1:02}.htm"
