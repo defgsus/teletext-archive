@@ -28,10 +28,11 @@ class Scraper:
     def __init_subclass__(cls, **kwargs):
         if not cls.ABSTRACT:
             assert cls.NAME, f"Define {cls.__name__}.NAME"
-        if cls.NAME in scraper_classes:
-            raise AssertionError(f"Duplicate name '{cls.NAME}' for class {cls.__name__}")
 
-        scraper_classes[cls.NAME] = cls
+            if cls.NAME in scraper_classes:
+                raise AssertionError(f"Duplicate name '{cls.NAME}' for class {cls.__name__}")
+
+            scraper_classes[cls.NAME] = cls
 
     def __init__(self, verbose: bool = False):
         self.verbose = verbose
@@ -43,6 +44,13 @@ class Scraper:
     @classmethod
     def path(cls) -> Path:
         return cls.BASE_PATH / cls.NAME
+
+    @classmethod
+    def to_filename(cls, page_index: int, sub_page_index: int) -> Path:
+        return cls.path() / (
+            f"{page_index:0{cls.NUM_PAGE_DIGITS}}"
+            f"-{sub_page_index:0{cls.NUM_SUB_PAGE_DIGITS}}.{cls.FILE_EXTENSION}"
+        )
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         """
@@ -80,10 +88,7 @@ class Scraper:
 
         for page_num, sub_page_num, content in self.iter_pages():
 
-            filename = self.path() / (
-                f"{page_num:0{self.NUM_PAGE_DIGITS}}"
-                f"-{sub_page_num:0{self.NUM_SUB_PAGE_DIGITS}}.{self.FILE_EXTENSION}"
-            )
+            filename = self.to_filename(page_num, sub_page_num)
             received_files.add(filename)
 
             if content is True:
@@ -100,7 +105,6 @@ class Scraper:
 
             self.log("storing", filename)
             filename.write_text(content)
-            received_files.add(filename)
 
         report["added"] = len(received_files - existing_files)
         removed_files = existing_files - received_files

@@ -26,17 +26,26 @@ class ZDFBase(Scraper):
             num_sub_pages = int(num_sub_pages) + 1
 
             page_status = {"date": date, "sub_pages": num_sub_pages}
+            is_empty_page = date == "-1"
 
-            # simply keep the files that don't have changed (according to published timestamp)
+            # keep the files that don't have changed (according to published timestamp)
+            #   and avoid downloading them because they include the current time
             if status.get(str(page_index)) == page_status:
-                for sub_page_index in range(num_sub_pages):
-                    yield page_index, sub_page_index + 1, True
-                continue
+                all_exist = False
+                if not is_empty_page:
+                    all_exist = all(
+                        self.to_filename(page_index, sub_page_index + 1).exists()
+                        for sub_page_index in range(num_sub_pages)
+                    )
+                    if all_exist:
+                        for sub_page_index in range(num_sub_pages):
+                            yield page_index, sub_page_index + 1, True
+                if all_exist:
+                    continue
 
             status[str(page_index)] = page_status
 
-            # empty page
-            if date == "-1":
+            if is_empty_page:
                 continue
 
             for sub_page_index in range(num_sub_pages):
