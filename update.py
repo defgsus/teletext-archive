@@ -26,7 +26,7 @@ def main(filter: List[str]):
     for scraper_class in filtered_classes:
 
         scraper = scraper_class(verbose=True)
-        scraper.full_download()
+        scraper.download()
 
 
 if __name__ == "__main__":
