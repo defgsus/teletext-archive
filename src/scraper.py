@@ -2,9 +2,10 @@ import os
 import sys
 import glob
 from pathlib import Path
-from typing import Generator, Tuple, Union
+from typing import Generator, Tuple, Union, Optional
 
 import requests
+import bs4
 
 scraper_classes = dict()
 
@@ -106,8 +107,8 @@ class Scraper:
             self.log("storing", filename)
             filename.write_text(content)
 
-        report["added"] = len(received_files - existing_files)
         removed_files = existing_files - received_files
+        report["added"] = len(received_files - existing_files)
         report["removed"] = len(removed_files)
 
         for fn in removed_files:
@@ -120,7 +121,19 @@ class Scraper:
         if self.verbose:
             print(f"{self.__class__.__name__}:", *args, file=sys.stderr)
 
-    def get_html(self, url, **kwargs) -> requests.Response:
+    def get_html(self, url: str, method: str = "GET", **kwargs) -> requests.Response:
         kwargs.setdefault("timeout", self.REQUEST_TIMEOUT)
         self.log("requesting", url)
-        return self.session.get(url, **kwargs)
+        return self.session.request(method=method, url=url, **kwargs)
+
+    def get_soup(
+            self,
+            url: str,
+            method: str = "GET",
+            expected_status: int = 200,
+            **kwargs
+    ) -> Optional[bs4.BeautifulSoup]:
+        response = self.get_html(url=url, method=method, **kwargs)
+        if response.status_code != expected_status:
+            return None
+        return bs4.BeautifulSoup(response.text, features="html.parser")

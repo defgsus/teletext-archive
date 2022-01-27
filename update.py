@@ -1,5 +1,6 @@
 import argparse
 import datetime
+import traceback
 from typing import List
 
 from src.scraper import scraper_classes
@@ -42,7 +43,7 @@ def main(filter: List[str], verbose: bool):
                     print(f"- {value} pages {key}")
 
         except Exception as e:
-            print(f"```\n{type(e).__name__}: {e}\n```")
+            print(f"```\n{traceback.format_exc(limit=-2)}```")
 
 
 if __name__ == "__main__":
