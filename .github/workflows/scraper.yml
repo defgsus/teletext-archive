@@ -18,7 +18,7 @@ jobs:
       - name: scraper
         run: |
           python update.py > commit-message.md
-          cat commit-messages.md
+          cat commit-message.md
       - name: git config user
         run: |
           curl -s -u ${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }} https://api.github.com/users/${GITHUB_ACTOR} > ${GITHUB_ACTOR}.json

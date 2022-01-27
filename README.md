@@ -46,4 +46,12 @@ Oh boy, look what else exists in the web: https://archive.teletextarchaeologist.
 - **CT** https://www.ceskatelevize.cz/teletext/ct/
 
   Images
+
+- **Swiss Teletext** https://mobile.txt.ch/  
+  
+  Does not really seem to work - with my script-blockers anyways
+
+- **ORF** https://teletext.orf.at/
+
+  JSON API delivering ... image-urls
   
