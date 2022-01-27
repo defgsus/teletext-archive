@@ -32,7 +32,7 @@ class ZDFBase(Scraper):
                 for sub_page_index in range(num_sub_pages):
                     yield page_index, sub_page_index + 1, True
                 continue
-                
+
             status[str(page_index)] = page_status
 
             # empty page
@@ -58,3 +58,15 @@ class ZDF(ZDFBase):
     ABSTRACT = False
     NAME = "zdf"
     ZDF_MANDANT = "zdf"
+
+
+class ZDFInfo(ZDFBase):
+    ABSTRACT = False
+    NAME = "zdf-info"
+    ZDF_MANDANT = "zdfinfo"
+
+
+class ZDFNeo(ZDFBase):
+    ABSTRACT = False
+    NAME = "zdf-neo"
+    ZDF_MANDANT = "zdfneo"
