@@ -2,6 +2,8 @@
 
 Or *videotext*, as we used to call it. 
 
+[![Scraper](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml/badge.svg)](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml)
+
 This repo exists mainly because it's just possible to scrape those
 online teletexts with github actions. And, you know, interesting
 stuff might evolve from historic beholding.
@@ -13,7 +15,7 @@ adds, overwrites or removes the individual files of each teletext page.
 ### scraped stations:
 
 | station       | since      | link
-|:--------------|:-----------|------
+|:--------------|:-----------|:-----
 | ARD           | 2022-01-28 | https://www.ard-text.de/
 | NDR           | 2022-01-27 | https://www.ndr.de/fernsehen/videotext/index.html
 | WDR           | 2022-01-27 | https://www1.wdr.de/wdrtext/index.html
@@ -24,7 +26,7 @@ adds, overwrites or removes the individual files of each teletext page.
 
 ### related stuff
 
-Oh boy, look what else exists in the web: 
+Oh boy, look what else exists on the web: 
 
 - https://archive.teletextarchaeologist.org
 - http://teletext.mb21.co.uk/
