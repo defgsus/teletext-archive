@@ -23,6 +23,10 @@ class WDR(Scraper):
             url = self._replace_page_num(generic_href, page_index)
             soup = self.get_soup(url)
             if soup:
+                page_input = soup.find("input", {"name": "_page_num"})
+                if page_input and page_input["value"] != str(page_index):
+                    continue
+
                 for sub_index, content in self._iter_sub_pages(soup.find("div", {"id": "wdrtext_inner"})):
                     yield page_index, sub_index, content
 
