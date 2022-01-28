@@ -24,6 +24,7 @@ jobs:
           curl -s -u ${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }} https://api.github.com/users/${GITHUB_ACTOR} > ${GITHUB_ACTOR}.json
           git config user.email "$(cat ${GITHUB_ACTOR}.json | jq -r .email)"
           git config user.name "scrapy"
+          git config pull.rebase false
       - name: commit changes
         run: |
           git add docs/snapshots/
