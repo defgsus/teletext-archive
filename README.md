@@ -9,6 +9,19 @@ stuff might evolve from historic beholding.
 The data is collected raw in [docs/snapshots](docs/snapshots). Each commit
 adds, overwrites or removes the individual files of each teletext page.
 
+
+### scraped stations:
+
+| station       | since      | link
+|:--------------|:-----------|------
+| ARD           | 2022-01-28 | https://www.ard-text.de/
+| NDR           | 2022-01-27 | https://www.ndr.de/fernsehen/videotext/index.html
+| WDR           | 2022-01-27 | https://www1.wdr.de/wdrtext/index.html
+| ZDF           | 2022-01-27 | https://teletext.zdf.de/teletext/zdf/
+| ZDFinfo       | 2022-01-27 | https://teletext.zdf.de/teletext/zdfinfo/
+| ZDFneo        | 2022-01-27 | https://teletext.zdf.de/teletext/zdfneo/
+
+
 ### related stuff
 
 Oh boy, look what else exists in the web: 
@@ -28,10 +41,6 @@ Oh boy, look what else exists in the web:
 - **SWR** https://www.swrfernsehen.de/videotext/index.html
 
   They only deliver gif files, boy!
-
-- **ARD** https://www.ard-text.de/
-
-  Embedded in bigger page
   
 - **3sat** https://blog.3sat.de/ttx/
 
