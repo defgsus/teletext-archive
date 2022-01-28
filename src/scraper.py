@@ -22,7 +22,7 @@ class Scraper:
     FILE_EXTENSION: str = "html"
 
     # request timeout in seconds
-    REQUEST_TIMEOUT: float = 5
+    REQUEST_TIMEOUT: float = 10
 
     BASE_PATH: Path = Path(__file__).resolve().parent.parent / "docs" / "snapshots"
 
