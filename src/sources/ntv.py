@@ -33,14 +33,14 @@ class NTV(Scraper):
             # get next page
             url = f"https://teletext.n-tv.de/teletext-api/ascend/{page_index}"
 
-    def _to_yield_page(self, page_index: int, sub_page_index: int, data: json) -> Tuple[int, int, Union[str, bool]]:
+    def _to_yield_page(self, page_index: int, sub_page_index: int, data: dict) -> Tuple[int, int, Union[str, bool]]:
         if self._is_page_different(page_index, sub_page_index, data):
             content = json.dumps(data, indent=2, ensure_ascii=False)
         else:
             content = True
         return page_index, sub_page_index, content
 
-    def _is_page_different(self, page_index: int, sub_page_index: int, new_data: json) -> bool:
+    def _is_page_different(self, page_index: int, sub_page_index: int, new_data: dict) -> bool:
         filename = self.to_filename(page_index, sub_page_index)
         if not filename.exists():
             return True
