@@ -14,14 +14,15 @@ adds, overwrites or removes the individual files of each teletext page.
 
 ### scraped stations:
 
-| station       | since      | link
-|:--------------|:-----------|:-----
-| ARD           | 2022-01-28 | https://www.ard-text.de/
-| NDR           | 2022-01-27 | https://www.ndr.de/fernsehen/videotext/index.html
-| WDR           | 2022-01-27 | https://www1.wdr.de/wdrtext/index.html
-| ZDF           | 2022-01-27 | https://teletext.zdf.de/teletext/zdf/
-| ZDFinfo       | 2022-01-27 | https://teletext.zdf.de/teletext/zdfinfo/
-| ZDFneo        | 2022-01-27 | https://teletext.zdf.de/teletext/zdfneo/
+| station                             | since      | type | link
+|:------------------------------------|:-----------|:-----|:----
+| [ARD](docs/snapshots/ard)           | 2022-01-28 | html | https://www.ard-text.de/
+| [NDR](docs/snapshots/ndr)           | 2022-01-27 | html | https://www.ndr.de/fernsehen/videotext/index.html
+| [n-tv](docs/snapshots/ntv)          | 2022-01-28 | json | https://www.n-tv.de/mediathek/teletext/
+| [WDR](docs/snapshots/wdr)           | 2022-01-28 | html | https://www1.wdr.de/wdrtext/index.html
+| [ZDF](docs/snapshots/zdf)           | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdf/
+| [ZDFinfo](docs/snapshots/zdf-info)  | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfinfo/
+| [ZDFneo](docs/snapshots/zdf-neo)    | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfneo/
 
 
 ### related stuff
@@ -52,11 +53,7 @@ Oh boy, look what else exists on the web:
 - **KIKA** https://www.kika.de/kikatext/kikatext-start100.html
 
   Images once more
-  
-- **n-tv** https://www.n-tv.de/mediathek/teletext/
-
-  Comes as JSON, char by char
-  
+    
 - **Seven-One** https://www.sevenonemedia.de/tv/portfolio/teletext/teletext-viewer
   
   This is the Pro7/Sat1 empire. They have **a lot** of channels. All images :(
