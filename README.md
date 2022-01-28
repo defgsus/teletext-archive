@@ -19,6 +19,7 @@ adds, overwrites or removes the individual files of each teletext page.
 | [ARD](docs/snapshots/ard)           | 2022-01-28 | html | https://www.ard-text.de/
 | [NDR](docs/snapshots/ndr)           | 2022-01-27 | html | https://www.ndr.de/fernsehen/videotext/index.html
 | [n-tv](docs/snapshots/ntv)          | 2022-01-28 | json | https://www.n-tv.de/mediathek/teletext/
+| [SR](docs/snapshots/sr)             | 2022-01-28 | html | https://www.saartext.de/
 | [WDR](docs/snapshots/wdr)           | 2022-01-28 | html | https://www1.wdr.de/wdrtext/index.html
 | [ZDF](docs/snapshots/zdf)           | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdf/
 | [ZDFinfo](docs/snapshots/zdf-info)  | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfinfo/
@@ -36,11 +37,7 @@ Oh boy, look what else exists on the web:
 
 
 ## TODO
-  
-- **SR** https://www.saartext.de/100
-
-  Embedded in a bigger page and subpage info needs to be scraped from html 
-  
+    
 - **SWR** https://www.swrfernsehen.de/videotext/index.html
 
   They only deliver gif files, boy!
