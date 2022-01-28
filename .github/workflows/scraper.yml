@@ -17,7 +17,7 @@ jobs:
           pip install -r requirements.txt
       - name: scraper
         run: |
-          python update.py > commit-message.md
+          python update.py -j 10 > commit-message.md
           cat commit-message.md
       - name: git config user
         run: |
@@ -30,4 +30,4 @@ jobs:
           git commit --file=commit-message.md --allow-empty
       - name: push changes
         run: |
-          git push
+          git push || (git pull --no-edit && git push)
