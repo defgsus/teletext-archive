@@ -16,6 +16,7 @@ adds, overwrites or removes the individual files of each teletext page.
 
 | station                             | since      | type | link
 |:------------------------------------|:-----------|:-----|:----
+| [3sat](docs/snapshots/3sat)         | 2022-01-28 | html with font-map | https://blog.3sat.de/ttx/
 | [ARD](docs/snapshots/ard)           | 2022-01-28 | html | https://www.ard-text.de/
 | [NDR](docs/snapshots/ndr)           | 2022-01-27 | html | https://www.ndr.de/fernsehen/videotext/index.html
 | [n-tv](docs/snapshots/ntv)          | 2022-01-28 | json | https://www.n-tv.de/mediathek/teletext/
@@ -41,12 +42,7 @@ Oh boy, look what else exists on the web:
 - **SWR** https://www.swrfernsehen.de/videotext/index.html
 
   They only deliver gif files, boy!
-  
-- **3sat** https://blog.3sat.de/ttx/
-
-  They have a nice collection of gif fonts. Problem is, they construct a 
-  teletext image from those font-maps via html/css. oO
-  
+    
 - **KIKA** https://www.kika.de/kikatext/kikatext-start100.html
 
   Images once more

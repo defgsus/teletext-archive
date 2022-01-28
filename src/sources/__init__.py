@@ -1,4 +1,5 @@
 from .ard import ARD
+from .dreisat import DreiSAT
 from .ndr import NDR
 from .ntv import NTV
 from .sr import SR
