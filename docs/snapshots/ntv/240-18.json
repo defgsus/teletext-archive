@@ -12,6 +12,9 @@
       "9",
       "10",
       "11",
+      "12",
+      "13",
+      "14",
       "15",
       "16",
       "17",
@@ -245,7 +248,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
@@ -263,13 +266,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "5"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "2"
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
@@ -5503,7 +5506,7 @@
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "7",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
@@ -5521,13 +5524,13 @@
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "10",
-            "value": "3"
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "11",
-            "value": "7"
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
@@ -6585,8 +6588,8 @@
         "index": 24
       }
     ],
-    "date": "2022-01-28 06:08:06",
-    "highestsubpage": "24"
+    "date": "2022-01-28 06:27:40",
+    "highestsubpage": "36"
   },
-  "date": "2022-01-28 06:12:59"
+  "date": "2022-01-28 06:35:01"
 }
