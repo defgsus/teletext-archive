@@ -218,7 +218,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "33",
-            "value": "1"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
@@ -248,13 +248,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "2"
+            "value": "4"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "8"
+            "value": "4"
           },
           {
             "font": "#FFFFFF",
@@ -5558,28 +5558,28 @@
             "background": "#FF0000",
             "index": "29",
             "dimension": "1",
-            "value": ">"
+            "value": "a"
           },
           {
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "30",
             "dimension": "1",
-            "value": " "
+            "value": "b"
           },
           {
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "31",
             "dimension": "1",
-            "value": ">"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "32",
             "dimension": "1",
-            "value": " "
+            "value": ">"
           },
           {
             "font": "#FFFFFF",
@@ -5625,15 +5625,13 @@
             "background": "#FF0000",
             "index": "38",
             "dimension": "1",
-            "link": "",
-            "value": " "
+            "value": "<"
           },
           {
             "font": "#FFFFFF",
             "background": "#FF0000",
             "index": "39",
             "dimension": "1",
-            "link": "",
             "value": " "
           },
           {
@@ -6443,8 +6441,8 @@
         "index": 24
       }
     ],
-    "date": "2022-02-02 21:01:43",
+    "date": "2022-02-02 22:01:59",
     "highestsubpage": "6"
   },
-  "date": "2022-02-02 21:02:37"
+  "date": "2022-02-02 22:02:18"
 }
