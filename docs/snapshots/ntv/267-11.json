@@ -218,13 +218,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "32",
-            "value": "1"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "33",
-            "value": "9"
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
@@ -236,7 +236,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "5"
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
@@ -254,7 +254,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "2"
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
@@ -1898,13 +1898,13 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "15",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "16",
-            "value": "4"
+            "value": "1"
           },
           {
             "font": "#FFFF00",
@@ -4440,13 +4440,13 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "15",
-            "value": "5"
+            "value": "7"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "16",
-            "value": "5"
+            "value": "0"
           },
           {
             "font": "#FFFF00",
@@ -4572,24 +4572,28 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "37",
-            "value": " "
+            "link": "175/0",
+            "value": "1"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "38",
+            "link": "175/0",
             "value": "7"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "39",
+            "link": "175/0",
             "value": "5"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "40",
+            "link": "",
             "value": " "
           }
         ],
@@ -6470,8 +6474,8 @@
         "index": 24
       }
     ],
-    "date": "2022-02-11 19:57:40",
+    "date": "2022-02-11 20:17:21",
     "highestsubpage": "18"
   },
-  "date": "2022-02-11 20:02:22"
+  "date": "2022-02-11 21:02:33"
 }
