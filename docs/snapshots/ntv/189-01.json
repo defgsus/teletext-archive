@@ -226,13 +226,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "1"
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
@@ -244,7 +244,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "0"
+            "value": "4"
           },
           {
             "font": "#FFFFFF",
@@ -3720,7 +3720,7 @@
             "font": "#FF00FF",
             "background": "#000000",
             "index": "30",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FF00FF",
@@ -3732,7 +3732,7 @@
             "font": "#FF00FF",
             "background": "#000000",
             "index": "32",
-            "value": "3"
+            "value": "4"
           },
           {
             "font": "#FF00FF",
@@ -3750,24 +3750,28 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "-"
+            "link": "189/002",
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
+            "link": "189/002",
             "value": ":"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "37",
-            "value": "-"
+            "link": "189/002",
+            "value": "3"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
+            "link": "",
             "value": ")"
           },
           {
@@ -6377,8 +6381,8 @@
         "index": 24
       }
     ],
-    "date": "2022-02-13 17:01:18",
+    "date": "2022-02-13 17:25:58",
     "highestsubpage": "2"
   },
-  "date": "2022-02-13 17:01:44"
+  "date": "2022-02-13 18:02:33"
 }
