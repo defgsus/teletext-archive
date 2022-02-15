@@ -214,7 +214,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "33",
-            "value": "6"
+            "value": "7"
           },
           {
             "font": "#FFFFFF",
@@ -226,13 +226,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "0"
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "7"
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
@@ -244,13 +244,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "3"
+            "value": "9"
           },
           {
             "font": "#FFFFFF",
@@ -1816,303 +1816,52 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "2",
-            "value": "r"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "3",
-            "value": "i"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "4",
-            "value": "n"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "5",
-            "value": "i"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "6",
-            "value": "t"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "7",
-            "value": "y"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "8",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "9",
-            "value": "B"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "10",
-            "value": " "
-          },
-          {
-            "font": "#00FFFF",
-            "background": "#000000",
-            "index": "11",
-            "value": "F"
-          },
-          {
-            "font": "#00FFFF",
-            "background": "#000000",
-            "index": "12",
-            "value": " "
-          },
-          {
-            "font": "#00FFFF",
-            "background": "#000000",
-            "index": "13",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "14",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "15",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "16",
-            "value": "1"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "17",
-            "value": ","
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "18",
-            "value": "1"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "19",
-            "value": "2"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "20",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "21",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "22",
-            "value": "+"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "23",
-            "value": "0"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "24",
-            "value": ","
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "25",
-            "value": "1"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "26",
-            "value": "0"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "27",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "28",
-            "value": " "
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "29",
-            "value": "+"
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "30",
-            "value": "9"
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "31",
-            "value": ","
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "32",
-            "value": "8"
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "33",
-            "value": "%"
-          },
-          {
-            "font": "#00FF00",
-            "background": "#000000",
-            "index": "34",
-            "value": " "
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "35",
-            "value": "2"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "36",
-            "value": "0"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "37",
-            "value": ":"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "38",
-            "value": "3"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "39",
-            "value": "0"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "40",
-            "value": " "
-          }
-        ],
-        "index": 7
-      },
-      {
-        "columns": [
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "0",
-            "value": " "
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "1",
-            "value": "T"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "2",
             "value": "u"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "3",
             "value": "n"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "4",
             "value": "a"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "5",
             "value": "s"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "6",
             "value": " "
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "7",
             "value": "B"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "8",
             "value": "a"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "9",
             "value": "r"
           },
           {
-            "font": "#FFFFFF",
+            "font": "#FFFF00",
             "background": "#000000",
             "index": "10",
             "value": " "
@@ -2136,6 +1885,257 @@
             "value": " "
           },
           {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "14",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "15",
+            "value": ","
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "16",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "17",
+            "value": "4"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "18",
+            "value": "1"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "19",
+            "value": "5"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "20",
+            "value": "+"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "21",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "22",
+            "value": ","
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "23",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "24",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "25",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "26",
+            "value": "5"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "27",
+            "value": " "
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "28",
+            "value": " "
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "29",
+            "value": "+"
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "30",
+            "value": "1"
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "31",
+            "value": ","
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "32",
+            "value": "2"
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "33",
+            "value": "%"
+          },
+          {
+            "font": "#00FF00",
+            "background": "#000000",
+            "index": "34",
+            "value": " "
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "35",
+            "value": "0"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "36",
+            "value": "7"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "37",
+            "value": ":"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "38",
+            "value": "3"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "39",
+            "value": "2"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "40",
+            "value": " "
+          }
+        ],
+        "index": 7
+      },
+      {
+        "columns": [
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "0",
+            "value": " "
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "1",
+            "value": "V"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "2",
+            "value": "i"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "3",
+            "value": "a"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "4",
+            "value": "c"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "5",
+            "value": "o"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "6",
+            "value": "m"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "7",
+            "value": " "
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "8",
+            "value": " "
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "9",
+            "value": " "
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "10",
+            "value": " "
+          },
+          {
+            "font": "#00FFFF",
+            "background": "#000000",
+            "index": "11",
+            "value": "F"
+          },
+          {
+            "font": "#00FFFF",
+            "background": "#000000",
+            "index": "12",
+            "value": " "
+          },
+          {
+            "font": "#00FFFF",
+            "background": "#000000",
+            "index": "13",
+            "value": " "
+          },
+          {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "14",
@@ -2145,31 +2145,31 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "15",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "16",
-            "value": ","
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "17",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "18",
-            "value": "4"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "19",
-            "value": "1"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
@@ -2181,25 +2181,25 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "21",
-            "value": "+"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "22",
-            "value": "0"
+            "value": "+"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "23",
-            "value": ","
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "24",
-            "value": "0"
+            "value": ","
           },
           {
             "font": "#FFFFFF",
@@ -2211,7 +2211,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "26",
-            "value": "1"
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
@@ -2229,13 +2229,13 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "29",
-            "value": "+"
+            "value": " "
           },
           {
             "font": "#00FF00",
             "background": "#000000",
             "index": "30",
-            "value": "2"
+            "value": "0"
           },
           {
             "font": "#00FF00",
@@ -2247,7 +2247,7 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "32",
-            "value": "5"
+            "value": "0"
           },
           {
             "font": "#00FF00",
@@ -2262,34 +2262,34 @@
             "value": " "
           },
           {
-            "font": "#FFFFFF",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "35",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "8"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "37",
-            "value": ":"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "1"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "6"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
@@ -2318,49 +2318,49 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "2",
-            "value": "i"
+            "value": "t"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "3",
-            "value": "a"
+            "value": "i"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "4",
-            "value": "c"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "5",
             "value": "o"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
+            "index": "5",
+            "value": "n"
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
             "index": "6",
-            "value": "m"
+            "value": " "
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "7",
-            "value": " "
+            "value": "W"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "8",
-            "value": " "
+            "value": "i"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "9",
-            "value": " "
+            "value": "r"
           },
           {
             "font": "#FFFF00",
@@ -2438,7 +2438,7 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "22",
-            "value": "+"
+            "value": " "
           },
           {
             "font": "#FFFF00",
@@ -2477,43 +2477,43 @@
             "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "29",
-            "value": " "
+            "value": "-"
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "30",
             "value": "0"
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "31",
             "value": ","
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "32",
-            "value": "0"
+            "value": "2"
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "33",
             "value": "%"
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "34",
             "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FF0000",
             "background": "#000000",
             "index": "35",
             "value": " "
@@ -2563,55 +2563,55 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "1",
-            "value": "V"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "2",
-            "value": "t"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "3",
-            "value": "i"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "4",
-            "value": "o"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "5",
-            "value": "n"
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "6",
-            "value": " "
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "7",
             "value": "W"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
+            "index": "2",
+            "value": "a"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "3",
+            "value": "s"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "4",
+            "value": "e"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "5",
+            "value": "c"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "6",
+            "value": "o"
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
+            "index": "7",
+            "value": " "
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
             "index": "8",
-            "value": "i"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "9",
-            "value": "r"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
@@ -2641,37 +2641,37 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "14",
-            "value": " "
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "15",
-            "value": " "
+            "value": ","
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "16",
-            "value": " "
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "17",
-            "value": " "
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "18",
-            "value": " "
+            "value": "7"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "19",
-            "value": " "
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
@@ -2689,7 +2689,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "22",
-            "value": " "
+            "value": "+"
           },
           {
             "font": "#FFFFFF",
@@ -2728,70 +2728,70 @@
             "value": " "
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "29",
-            "value": "-"
+            "value": "+"
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "30",
-            "value": "0"
+            "value": "2"
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "31",
             "value": ","
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "32",
-            "value": "2"
+            "value": "9"
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "33",
             "value": "%"
           },
           {
-            "font": "#FF0000",
+            "font": "#00FF00",
             "background": "#000000",
             "index": "34",
             "value": " "
           },
           {
-            "font": "#FF0000",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": " "
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": " "
+            "value": "8"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "37",
-            "value": " "
+            "value": ":"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": " "
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": " "
+            "value": "3"
           },
           {
             "font": "#FFFFFF",
@@ -2820,7 +2820,7 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "2",
-            "value": "a"
+            "value": "e"
           },
           {
             "font": "#FFFF00",
@@ -2832,31 +2832,31 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "4",
-            "value": "e"
+            "value": "t"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "5",
-            "value": "c"
+            "value": " "
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "6",
-            "value": "o"
+            "value": "R"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "7",
-            "value": " "
+            "value": "e"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "8",
-            "value": " "
+            "value": "d"
           },
           {
             "font": "#FFFF00",
@@ -2892,37 +2892,37 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "14",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "15",
-            "value": ","
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "16",
             "value": "0"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
+            "index": "16",
+            "value": ","
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
             "index": "17",
-            "value": "1"
+            "value": "0"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "18",
-            "value": "7"
+            "value": "3"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "19",
-            "value": "5"
+            "value": "6"
           },
           {
             "font": "#FFFF00",
@@ -2934,25 +2934,25 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "21",
-            "value": " "
+            "value": "-"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "22",
-            "value": "+"
-          },
-          {
-            "font": "#FFFF00",
-            "background": "#000000",
-            "index": "23",
             "value": "0"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
-            "index": "24",
+            "index": "23",
             "value": ","
+          },
+          {
+            "font": "#FFFF00",
+            "background": "#000000",
+            "index": "24",
+            "value": "0"
           },
           {
             "font": "#FFFF00",
@@ -2964,7 +2964,7 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "26",
-            "value": "0"
+            "value": "2"
           },
           {
             "font": "#FFFF00",
@@ -2982,13 +2982,13 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "29",
-            "value": "+"
+            "value": " "
           },
           {
             "font": "#00FF00",
             "background": "#000000",
             "index": "30",
-            "value": "2"
+            "value": "0"
           },
           {
             "font": "#00FF00",
@@ -3000,7 +3000,7 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "32",
-            "value": "9"
+            "value": "0"
           },
           {
             "font": "#00FF00",
@@ -3018,13 +3018,13 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "35",
-            "value": "0"
+            "value": "1"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "36",
-            "value": "8"
+            "value": "5"
           },
           {
             "font": "#FFFF00",
@@ -3036,13 +3036,13 @@
             "font": "#FFFF00",
             "background": "#000000",
             "index": "38",
-            "value": "0"
+            "value": "5"
           },
           {
             "font": "#FFFF00",
             "background": "#000000",
             "index": "39",
-            "value": "3"
+            "value": "5"
           },
           {
             "font": "#FFFFFF",
@@ -3065,37 +3065,37 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "1",
-            "value": "W"
+            "value": "Z"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "2",
-            "value": "e"
+            "value": "h"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "3",
-            "value": "s"
+            "value": "o"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "4",
-            "value": "t"
+            "value": "n"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "5",
-            "value": " "
+            "value": "g"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "6",
-            "value": "R"
+            "value": "D"
           },
           {
             "font": "#FFFFFF",
@@ -3107,13 +3107,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "8",
-            "value": "d"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "9",
-            "value": " "
+            "value": "W"
           },
           {
             "font": "#FFFFFF",
@@ -3149,31 +3149,31 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "15",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "16",
-            "value": ","
-          },
-          {
-            "font": "#FFFFFF",
-            "background": "#000000",
-            "index": "17",
             "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
+            "index": "17",
+            "value": ","
+          },
+          {
+            "font": "#FFFFFF",
+            "background": "#000000",
             "index": "18",
-            "value": "3"
+            "value": "9"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "19",
-            "value": "6"
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
@@ -3185,25 +3185,25 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "21",
-            "value": "-"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "22",
-            "value": "0"
+            "value": "+"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "23",
-            "value": ","
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "24",
-            "value": "0"
+            "value": ","
           },
           {
             "font": "#FFFFFF",
@@ -3215,7 +3215,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "26",
-            "value": "2"
+            "value": "6"
           },
           {
             "font": "#FFFFFF",
@@ -3233,13 +3233,13 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "29",
-            "value": " "
+            "value": "+"
           },
           {
             "font": "#00FF00",
             "background": "#000000",
             "index": "30",
-            "value": "0"
+            "value": "7"
           },
           {
             "font": "#00FF00",
@@ -3251,7 +3251,7 @@
             "font": "#00FF00",
             "background": "#000000",
             "index": "32",
-            "value": "0"
+            "value": "1"
           },
           {
             "font": "#00FF00",
@@ -3275,7 +3275,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "5"
+            "value": "7"
           },
           {
             "font": "#FFFFFF",
@@ -3287,13 +3287,13 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "5"
+            "value": "3"
           },
           {
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "5"
+            "value": "0"
           },
           {
             "font": "#FFFFFF",
@@ -3313,238 +3313,238 @@
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "1",
-            "value": "Z"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "2",
-            "value": "h"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "3",
-            "value": "o"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "4",
-            "value": "n"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "5",
-            "value": "g"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "6",
-            "value": "D"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "7",
-            "value": "e"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "8",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "9",
-            "value": "W"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "10",
             "value": " "
           },
           {
-            "font": "#00FFFF",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "11",
-            "value": "F"
+            "value": " "
           },
           {
-            "font": "#00FFFF",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "12",
             "value": " "
           },
           {
-            "font": "#00FFFF",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "13",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "14",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "15",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "16",
-            "value": "0"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "17",
-            "value": ","
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "18",
-            "value": "9"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "19",
-            "value": "1"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "20",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "21",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "22",
-            "value": "+"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "23",
-            "value": "0"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "24",
-            "value": ","
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "25",
-            "value": "0"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "26",
-            "value": "6"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "27",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "28",
             "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "29",
-            "value": "+"
+            "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "30",
-            "value": "7"
+            "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "31",
-            "value": ","
+            "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "32",
-            "value": "1"
+            "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "33",
-            "value": "%"
+            "value": " "
           },
           {
-            "font": "#00FF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "34",
             "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "35",
-            "value": "1"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "7"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "37",
-            "value": ":"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "3"
+            "value": " "
           },
           {
-            "font": "#FFFF00",
+            "font": "#FFFFFF",
             "background": "#000000",
             "index": "39",
-            "value": "0"
+            "value": " "
           },
           {
             "font": "#FFFFFF",
@@ -6422,8 +6422,8 @@
         "index": 24
       }
     ],
-    "date": "2022-02-15 06:07:19",
+    "date": "2022-02-15 07:55:44",
     "highestsubpage": "2"
   },
-  "date": "2022-02-15 07:02:39"
+  "date": "2022-02-15 08:02:11"
 }
