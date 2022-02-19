@@ -1,14 +1,27 @@
 import re
 from typing import Dict, Generator, Tuple, Union
 
-from ..scraper import Scraper
+import bs4
 
+from ..scraper import Scraper
+from ..teletext import Teletext
 
 class NDR(Scraper):
 
     NAME = "ndr"
 
     FILE_EXTENSION = "htm"
+
+    COLOR_CLASS_MAPPING = {
+        "0": "b",
+        "1": "r",
+        "2": "g",
+        "3": "y",
+        "4": "l",
+        "5": "m",
+        "6": "c",
+        "7": "w",
+    }
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         for page_index, num_sub_pages in self._get_pages().items():
@@ -25,3 +38,33 @@ class NDR(Scraper):
             pages[int(match[0])] = int(match[1])
 
         return pages
+
+    def to_teletext(self, content: str) -> Teletext:
+        soup = self.to_soup(content)
+        tt = Teletext()
+        tt.new_line()
+        for elem in soup.find("pre", {"class": "txt"}).children:
+            block = Teletext.Block("")
+
+            if isinstance(elem, bs4.NavigableString):
+                if elem == "\n":
+                    tt.new_line()
+
+            elif elem.name == "b":
+                classes = elem.get("class")
+                if classes:
+                    for cls in classes:
+                        if cls.startswith("f"):
+                            block.color = self.COLOR_CLASS_MAPPING.get(cls[1:], cls[1:])
+                        elif cls.startswith("b"):
+                            block.bg_color = self.COLOR_CLASS_MAPPING.get(cls[1:], cls[1:])
+                block.text += elem.text
+            elif elem.name == "a":
+                block.text += elem.text
+            else:
+                self.log(f"unhandled element {elem}")
+
+            if block.text:
+                tt.add_block(block)
+
+        return tt

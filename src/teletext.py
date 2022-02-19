@@ -60,8 +60,8 @@ class Teletext:
 
             if colors:
                 block_str = ConsoleColors.escape(
-                    Teletext.COLOR_CONSOLE_MAPPING[self.color],
-                    Teletext.COLOR_CONSOLE_MAPPING[self.bg_color]
+                    Teletext.COLOR_CONSOLE_MAPPING[self.color or "w"],
+                    Teletext.COLOR_CONSOLE_MAPPING[self.bg_color or "b"]
                 ) + block_str + ConsoleColors.escape()
 
             return block_str
