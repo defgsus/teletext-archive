@@ -26,6 +26,22 @@ class Scraper:
 
     BASE_PATH: Path = Path(__file__).resolve().parent.parent / "docs" / "snapshots"
 
+    class Colors:
+        """
+        mapping of color name to one-character code
+
+        https://en.wikipedia.org/wiki/Videotex_character_set#C1_control_codes
+        """
+        BLACK = "b"
+        RED = "r"
+        GREEN = "g"
+        YELLOW = "y"
+        BLUE = "l"
+        MAGENTA = "m"
+        CYAN = "c"
+        WHITE = "w"
+
+
     def __init_subclass__(cls, **kwargs):
         if not cls.ABSTRACT:
             assert cls.NAME, f"Define {cls.__name__}.NAME"
@@ -136,4 +152,11 @@ class Scraper:
         response = self.get_html(url=url, method=method, **kwargs)
         if response.status_code != expected_status:
             return None
-        return bs4.BeautifulSoup(response.text, features="html.parser")
+        return self.to_soup(response.text)
+
+    @classmethod
+    def to_soup(cls, markup: str) -> bs4.BeautifulSoup:
+        return bs4.BeautifulSoup(markup, features="html.parser")
+
+    def to_teletext(self, content: str):
+        raise NotImplementedError

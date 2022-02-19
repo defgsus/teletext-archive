@@ -3,11 +3,17 @@ from typing import Dict, Generator, Tuple, Union, Optional
 import bs4
 
 from ..scraper import Scraper
+from ..teletext import Teletext
+from ..console import ConsoleColors as C
 
 
 class ARD(Scraper):
 
     NAME = "ard"
+
+    COLOR_CLASS_MAPPING = {
+        "bl": "l"
+    }
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         page_index = 100
@@ -40,3 +46,48 @@ class ARD(Scraper):
 
     def _get_url(self, page_index: int, sub_page_index: int) -> str:
         return f"https://www.ard-text.de/index.php?page={page_index}&sub={sub_page_index}"
+
+    def to_teletext(self, content: str) -> Teletext:
+        soup = self.to_soup(content)
+        tt = Teletext()
+        for line in soup.find("div", {"id": "page_1"}).find_all("div"):
+            tt.new_line()
+
+            for nobr in line.find_all("nobr"):
+
+                block = Teletext.Block("")
+
+                if nobr.parent.name == "span":
+                    for cls in nobr.parent.get("class"):
+                        if cls.startswith("fg"):
+                            block.color = self.COLOR_CLASS_MAPPING.get(cls[2:], cls[2:])
+                        elif cls.startswith("bg"):
+                            block.bg_color = self.COLOR_CLASS_MAPPING.get(cls[2:], cls[2:])
+
+                for c in nobr.children:
+                    if isinstance(c, bs4.NavigableString):
+                        block.text += c.text
+                    elif c.name == "a":
+                        block.text += c.text
+                    elif c.name == "img":
+                        block.text += self._get_img_tt_char(c.get("src"))
+                    else:
+                        self.log(f"unhandled element {c}")
+
+                if block.text:
+                    tt.add_block(block)
+
+        return tt
+
+    @classmethod
+    def _get_img_tt_char(cls, url: str) -> str:
+        """
+        Convert image url to unicode str
+
+        https://en.wikipedia.org/wiki/Teletext_character_set#G1_block_mosaics
+        """
+        try:
+            code = int(url[-6:-4], 16)
+            return chr(0x1fb00 + code - 0x21)
+        except ValueError:
+            return "?"
