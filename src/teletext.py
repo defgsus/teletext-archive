@@ -218,6 +218,10 @@ class Teletext:
             self.color = color
             self.bg_color = bg_color
 
+        def has_different_attribute(self, other: "Block") -> bool:
+            return self.color != other.color \
+                or self.bg_color != other.bg_color
+
         def to_json(self) -> list:
             return [
                 "".join((self.color or "_", self.bg_color or "_")),
@@ -240,6 +244,8 @@ class Teletext:
 
     def new_line(self):
         self.lines.append([])
+        if len(self.lines) > 1:
+            self.lines[-2] = self._simplify_line(self.lines[-2])
 
     def add_block(self, block: Block):
         self.lines[-1].append(block)
@@ -300,3 +306,25 @@ class Teletext:
     @classmethod
     def g3_to_unicode(cls, code: int) -> int:
         return cls.G3_TO_UNICODE_MAPPING.get(code, ord("?"))
+
+    def _simplify_line(self, line: List[Block]) -> List[Block]:
+        """
+        Merge blocks of equal attributes together
+
+        Returns new list but blocks may have changed!
+        """
+        simple_line = []
+        prev_block = None
+        for block in line:
+            if not prev_block:
+                prev_block = block
+            elif block.has_different_attribute(prev_block):
+                simple_line.append(prev_block)
+                prev_block = block
+            else:
+                prev_block.text += block.text
+                
+        if prev_block:
+            simple_line.append(prev_block)
+
+        return simple_line

@@ -26,6 +26,19 @@ class ZDFBase(Scraper):
         "FFFFFF": "w",
     }
 
+    ENCODING_FIX_MAPPING = {
+        "Ã": "Ü",
+        "Ã¼": "ü",
+        "â": "@",
+        "Ã": "ß",
+        "Ã": "Ä",
+        "Ã¤": "ä",
+        "Ã¶": "ö",
+        "Â°": "°",
+        "Ã¿": "\x7f",
+        "Ã": "Ö",
+    }
+
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         status_filename = self.path() / "status.json"
         if status_filename.exists():
@@ -37,6 +50,7 @@ class ZDFBase(Scraper):
 
             url = f"https://teletext.zdf.de/php/options.php?mandant={self.ZDF_MANDANT}&site={page_index}"
             response = self.get_html(url)
+
             num_sub_pages, date = response.text.split(",")
             num_sub_pages = int(num_sub_pages) + 1
 
@@ -72,12 +86,16 @@ class ZDFBase(Scraper):
                 response = self.get_html(url)
 
                 if response.status_code == 200:
-                    yield page_index, sub_page_index + 1, response.text
+                    text = response.content.decode("utf-8")
+                    yield page_index, sub_page_index + 1, text
 
         self.log("writing", status_filename)
         status_filename.write_text(json.dumps(status, indent=2))
 
     def to_teletext(self, content: str) -> Teletext:
+        for wrong, correct in self.ENCODING_FIX_MAPPING.items():
+            content = content.replace(wrong, correct)
+
         soup = self.to_soup(content)
         tt = Teletext()
         for row in soup.find("div", {"id": "content"}).find_all("div", {"class": "row"}):
@@ -93,8 +111,25 @@ class ZDFBase(Scraper):
                             block.color = self.COLOR_CLASS_MAPPING[cls[1:]]
                         elif cls.startswith("bc"):
                             block.bg_color = self.COLOR_CLASS_MAPPING[cls[2:]]
+
                         elif cls == "teletextlinedrawregular":
-                            pass  # TODO: convert g1 characters
+                            # The codes they use are almost equivalent to g1
+                            codes = [ord(c) for c in block.text]
+                            block.text = ""
+                            for c in codes:
+                                if c >= 0xa0:
+                                    c -= 0x80
+                                if 0x20 <= c <= 0x3f or 0x60 <= c <= 0x7f:
+                                    c = chr(Teletext.g1_to_unicode(c))
+                                elif 0x41 == c:
+                                    c = chr(Teletext.g1_to_unicode(0x7f))
+                                elif 0xa0 == c:
+                                    c = " "
+                                else:
+                                    # print(f"mhh {c:x}")
+                                    c = "?"
+                                block.text += c
+
                 if block.text:
                     tt.add_block(block)
 

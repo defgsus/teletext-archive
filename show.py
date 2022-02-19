@@ -67,10 +67,14 @@ class Viewer:
             self.set_page(*self.get_next_page(self.page, 1000, 1))
         elif cmd == "\x1b[b":
             self.set_page(*self.get_next_page(self.page, 0, -1))
+        elif cmd == "\x1b[5~":
+            self.set_page(self.page + 10, 1)
+        elif cmd == "\x1b[6~":
+            self.set_page(self.page - 10, 1)
         elif cmd in scraper_classes:
             self.set_scraper(cmd)
         else:
-            return f"Unknown command '{cmd}'"
+            return f"Unknown command {repr(cmd)}"
 
     def render(self):
         filename = self.scraper.to_filename(self.page, self.sub_page)
@@ -80,7 +84,7 @@ class Viewer:
         print(f"page {self.page}-{self.sub_page}\n")
         if self.mode == "ansi":
             print(tt.to_ansi(colors=self.colors))
-            Path("test.txt").write_text(tt.to_ansi(colors=False))
+            # Path("test.txt").write_text(tt.to_ansi(colors=False))
         else:
             print(tt.to_ndjson())
         print(self.help_str())
