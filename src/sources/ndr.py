@@ -65,6 +65,24 @@ class NDR(Scraper):
                 self.log(f"unhandled element {elem}")
 
             if block.text:
+                text = block.text
+                block.text = ""
+                for c in text:
+                    if ord(c) >= 0xe000:
+                        g1 = ord(c) - 0xe000
+                        # TODO: they have a 'thin' set in their font
+                        #   but i don't think it's in unicode
+                        #   so it's converted to normal here
+                        if g1 > 0x40:
+                            g1 -= 0x40
+
+                        g1 += 0x20
+                        if 0x40 <= g1 <= 0x5f:
+                            g1 += 0x20
+
+                        block.text += chr(Teletext.g1_to_unicode(g1))
+                    else:
+                        block.text += c
                 tt.add_block(block)
 
         return tt

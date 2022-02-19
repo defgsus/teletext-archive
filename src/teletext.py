@@ -293,8 +293,10 @@ class Teletext:
 
     @classmethod
     def g1_to_unicode(cls, code: int) -> int:
-        return cls.G1_TO_UNICODE_MAPPING.get(code, "?")
+        #if code not in cls.G1_TO_UNICODE_MAPPING:
+        #    print(f"unrecognized {code:x}")
+        return cls.G1_TO_UNICODE_MAPPING.get(code, ord("?"))
 
     @classmethod
     def g3_to_unicode(cls, code: int) -> int:
-        return cls.G3_TO_UNICODE_MAPPING.get(code, "?")
+        return cls.G3_TO_UNICODE_MAPPING.get(code, ord("?"))
