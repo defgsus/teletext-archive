@@ -70,10 +70,9 @@ class NDR(Scraper):
                 for c in text:
                     if ord(c) >= 0xe000:
                         g1 = ord(c) - 0xe000
-                        # TODO: they have a 'thin' set in their font
-                        #   but i don't think it's in unicode
-                        #   so it's converted to normal here
+
                         if g1 > 0x40:
+                            # TODO: set block.char_set (which might require multiple blocks)
                             g1 -= 0x40
 
                         g1 += 0x20

@@ -118,6 +118,7 @@ class ZDFBase(Scraper):
                             block.text = ""
                             for c in codes:
                                 if c >= 0xa0:
+                                    # TODO: set block.char_set (which might require multiple blocks)
                                     c -= 0x80
                                 if 0x20 <= c <= 0x3f or 0x60 <= c <= 0x7f:
                                     c = chr(Teletext.g1_to_unicode(c))
