@@ -50,9 +50,8 @@ class Viewer:
         # print(repr(cmd))
         try:
             new_page = int(cmd)
-            if new_page >= 100:
-                self.set_page(new_page)
-                return
+            self.set_page(new_page)
+            return
         except ValueError:
             pass
 
@@ -81,6 +80,7 @@ class Viewer:
         print(f"page {self.page}-{self.sub_page}\n")
         if self.mode == "ansi":
             print(tt.to_ansi(colors=self.colors))
+            Path("test.txt").write_text(tt.to_ansi(colors=False))
         else:
             print(tt.to_ndjson())
         print(self.help_str())
@@ -124,6 +124,7 @@ class Viewer:
             return self.pages[-1]
 
         return page
+
 
 def main(
         scraper: str,

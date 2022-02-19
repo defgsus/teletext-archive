@@ -55,9 +55,9 @@ class NDR(Scraper):
                 if classes:
                     for cls in classes:
                         if cls.startswith("f"):
-                            block.color = self.COLOR_CLASS_MAPPING.get(cls[1:], cls[1:])
+                            block.color = self.COLOR_CLASS_MAPPING[cls[1:]]
                         elif cls.startswith("b"):
-                            block.bg_color = self.COLOR_CLASS_MAPPING.get(cls[1:], cls[1:])
+                            block.bg_color = self.COLOR_CLASS_MAPPING[cls[1:]]
                 block.text += elem.text
             elif elem.name == "a":
                 block.text += elem.text

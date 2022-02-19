@@ -35,6 +35,7 @@ Oh boy, look what else exists on the web:
 - http://teletext.mb21.co.uk/
 - https://www.teletextart.com/
 - https://galax.xyz/TELETEXT/
+- https://zxnet.co.uk/teletext/viewer/
 
 
 ## TODO

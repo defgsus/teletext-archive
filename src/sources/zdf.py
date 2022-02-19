@@ -3,13 +3,28 @@ import json
 from typing import Dict, Generator, Tuple, Union
 
 from ..scraper import Scraper
+from ..teletext import Teletext
 
 
 class ZDFBase(Scraper):
+    """
+    TODO: they probably send the wrong encoding
+    """
 
     ABSTRACT = True
 
     ZDF_MANDANT = None
+
+    COLOR_CLASS_MAPPING = {
+        "000000": "b",
+        "FF0000": "r",
+        "00FF00": "g",
+        "FFFF00": "y",
+        "0000FF": "l",
+        "FF00FF": "m",
+        "80FFFF": "c",
+        "FFFFFF": "w",
+    }
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         status_filename = self.path() / "status.json"
@@ -61,6 +76,29 @@ class ZDFBase(Scraper):
 
         self.log("writing", status_filename)
         status_filename.write_text(json.dumps(status, indent=2))
+
+    def to_teletext(self, content: str) -> Teletext:
+        soup = self.to_soup(content)
+        tt = Teletext()
+        for row in soup.find("div", {"id": "content"}).find_all("div", {"class": "row"}):
+            tt.new_line()
+
+            for elem in row.find_all("span"):
+                block = Teletext.Block(elem.text)
+
+                classes = elem.get("class")
+                if classes:
+                    for cls in classes:
+                        if cls.startswith("c"):
+                            block.color = self.COLOR_CLASS_MAPPING[cls[1:]]
+                        elif cls.startswith("bc"):
+                            block.bg_color = self.COLOR_CLASS_MAPPING[cls[2:]]
+                        elif cls == "teletextlinedrawregular":
+                            pass  # TODO: convert g1 characters
+                if block.text:
+                    tt.add_block(block)
+
+        return tt
 
 
 class ZDF(ZDFBase):

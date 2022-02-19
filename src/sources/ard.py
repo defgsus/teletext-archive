@@ -88,6 +88,7 @@ class ARD(Scraper):
         """
         try:
             code = int(url[-6:-4], 16)
-            return chr(0x1fb00 + code - 0x21)
+            return chr(Teletext.g1_to_unicode(code))
         except ValueError:
             return "?"
+
