@@ -4,6 +4,7 @@ from typing import Dict, Generator, Tuple, Union, Optional
 import bs4
 
 from ..scraper import Scraper
+from ..teletext import Teletext
 
 
 class SR(Scraper):
@@ -51,3 +52,21 @@ class SR(Scraper):
         new_content = new_content.splitlines()[1:]
 
         return old_content != new_content
+
+    def to_teletext(self, content: str) -> Teletext:
+        soup = self.to_soup(content)
+        tt = Teletext()
+        tt.new_line()
+        for elem in soup.find("pre").children:
+
+            if isinstance(elem, bs4.NavigableString):
+                tt.add_block(Teletext.Block(elem))
+
+            elif elem.name == "a":
+                link = tuple(int(n) for n in filter(bool, elem["href"].split("/")))
+                tt.add_block(Teletext.Block(elem.text, link=link))
+
+            else:
+                self.log(f"unhandled element {elem}")
+
+        return tt
