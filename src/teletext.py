@@ -44,6 +44,17 @@ class Teletext:
         "w": ConsoleColors.WHITE,
     }
 
+    BOOL_RGB_TO_TELETEXT_MAPPING = {
+        (False, False, False): "b",
+        (True, False, False): "r",
+        (False, True, False): "g",
+        (True, True, False): "y",
+        (False, False, True): "l",
+        (True, False, True): "m",
+        (False, True, True): "c",
+        (True, True, True): "w",
+    }
+
     class Block:
         def __init__(
                 self,
@@ -51,7 +62,7 @@ class Teletext:
                 color: Optional[str] = None,
                 bg_color: Optional[str] = None,
                 char_set: int = 0,
-                link: Optional[Union[int, Tuple[int, int]]] = None
+                link: Optional[Union[int, Tuple[int, int], List[int]]] = None
         ):
             assert color is None or color in Teletext.COLOR_CONSOLE_MAPPING, color
             assert bg_color is None or bg_color in Teletext.COLOR_CONSOLE_MAPPING, bg_color
@@ -59,14 +70,23 @@ class Teletext:
             self.color = color
             self.bg_color = bg_color
             self.char_set = char_set
+            self._link = None
+            self.link = link
+
+        @property
+        def link(self) -> Union[int, List[int]]:
+            return self._link
+
+        @link.setter
+        def link(self, link: Optional[Union[int, Tuple[int, int], List[int]]]):
             if isinstance(link, (tuple, list)):
-                self.link = [int(l) for l in link]
-                if len(self.link) == 1:
-                    self.link = self.link[0]
-                elif len(self.link) != 2:
+                self._link = [int(l) for l in link]
+                if len(self._link) == 1:
+                    self._link = self._link[0]
+                elif len(self._link) != 2:
                     raise ValueError(f"Invalid block link {link}")
             else:
-                self.link = int(link) if link is not None else None
+                self._link = int(link) if link is not None else None
 
         def has_different_attribute(self, other: "Block") -> bool:
             return self.color != other.color \
@@ -182,6 +202,30 @@ class Teletext:
     def g3_to_unicode(cls, code: int) -> int:
         return G3_TO_UNICODE_MAPPING.get(code, ord("?"))
 
+    @classmethod
+    def rgb_to_teletext(cls, x: Union[str]) -> str:
+        if isinstance(x, str):
+            if len(x) == 3:
+                rgb = int(x, 16)
+                rgb = (
+                    ((rgb >> 8) & 0xf) > 5,
+                    ((rgb >> 4) & 0xf) > 5,
+                    (rgb & 0xf) > 5,
+                )
+            elif len(x) == 6:
+                rgb = int(x, 16)
+                rgb = (
+                    ((rgb >> 16) & 0xff) > 0x50,
+                    ((rgb >> 8) & 0xff) > 0x50,
+                    (rgb & 0xff) > 0x50,
+                )
+            else:
+                raise ValueError(f"Can't convert rgb value '{x}'")
+
+            return cls.BOOL_RGB_TO_TELETEXT_MAPPING[rgb]
+        else:
+            raise TypeError(f"Can't convert rgb value '{x}' of type {type(x).__name__}")
+
     def _simplify_line(self, line: List[Block]) -> List[Block]:
         """
         Merge blocks of equal attributes together
@@ -203,3 +247,4 @@ class Teletext:
             simple_line.append(prev_block)
 
         return simple_line
+

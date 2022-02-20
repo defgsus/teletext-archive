@@ -6,6 +6,7 @@ import bs4
 from ..scraper import Scraper
 from ..teletext import Teletext
 
+
 class NDR(Scraper):
 
     NAME = "ndr"

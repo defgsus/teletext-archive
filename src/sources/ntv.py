@@ -2,6 +2,7 @@ import json
 from typing import Dict, Generator, Tuple, Union, Optional
 
 from ..scraper import Scraper
+from ..teletext import Teletext
 
 
 class NTV(Scraper):
@@ -52,3 +53,24 @@ class NTV(Scraper):
         old_data["content"]["date"] = new_data["content"]["date"]
 
         return old_data != new_data
+
+    def to_teletext(self, content: str) -> Teletext:
+        data = json.loads(content)
+
+        matrix = []
+        for row in data["content"]["row"]:
+            matrix_row = []
+            for col in row["columns"]:
+                if col.get("graphic"):
+                    char = chr(Teletext.g1_to_unicode(int(col["value"])))
+                else:
+                    char = col["value"]
+
+                color = "".join((
+                    Teletext.rgb_to_teletext(col["font"][1:]),
+                    Teletext.rgb_to_teletext(col["background"][1:]),
+                ))
+                matrix_row.append((char, color))
+            matrix.append(matrix_row)
+
+        return Teletext.from_matrix(matrix)

@@ -84,7 +84,7 @@ class Viewer:
         print(f"page {self.page}-{self.sub_page}\n")
         if self.mode == "ansi":
             print(tt.to_ansi(colors=self.colors))
-            # Path("test.txt").write_text(tt.to_ansi(colors=False))
+            #Path("ansi.txt").write_text(tt.to_ansi(colors=True))
         else:
             print(tt.to_ndjson())
         print(self.help_str())
