@@ -15,16 +15,6 @@ class ZDFBase(Scraper):
 
     ZDF_MANDANT = None
 
-    COLOR_CLASS_MAPPING = {
-        "000000": "b",
-        "FF0000": "r",
-        "00FF00": "g",
-        "FFFF00": "y",
-        "0000FF": "l",
-        "FF00FF": "m",
-        "80FFFF": "c",
-        "FFFFFF": "w",
-    }
 
     ENCODING_FIX_MAPPING = {
         "Ã": "Ü",
@@ -36,6 +26,7 @@ class ZDFBase(Scraper):
         "Ã¶": "ö",
         "Â°": "°",
         "Ã¿": "\x7f",
+        "Ö³": "ó",
         "Ã": "Ö",
     }
 
@@ -108,9 +99,9 @@ class ZDFBase(Scraper):
                 if classes:
                     for cls in classes:
                         if cls.startswith("c"):
-                            block.color = self.COLOR_CLASS_MAPPING[cls[1:]]
+                            block.color = Teletext.rgb_to_teletext(cls[1:])
                         elif cls.startswith("bc"):
-                            block.bg_color = self.COLOR_CLASS_MAPPING[cls[2:]]
+                            block.bg_color = Teletext.rgb_to_teletext(cls[2:])
 
                         elif cls == "teletextlinedrawregular":
                             # The codes they use are almost equivalent to g1
