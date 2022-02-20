@@ -2,6 +2,18 @@
 Unicode (and teletext) related stuff
 """
 
+_G0 = r""" !"#$%&'()*+,-./
+0123456789:;<=>?
+@ABCDEFGHIJKLMNO
+PQRSTUVWXYZ[\]^_
+`abcdefghijklmno
+pqrstuvwxyz{:}~■""".replace("\n", "")
+
+G0_TO_UNICODE_MAPPING = {
+    i + 0x20: ord(char)
+    for i, char in enumerate(_G0)
+}
+
 
 G1_TO_UNICODE_MAPPING = {
     0x20: 0x20,

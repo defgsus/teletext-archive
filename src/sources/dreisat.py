@@ -6,6 +6,20 @@ import bs4
 
 from ..scraper import Scraper
 from ..teletext import Teletext
+from ..unico import G0_TO_UNICODE_MAPPING
+
+CUSTOM_G0_MAPPING = G0_TO_UNICODE_MAPPING.copy()
+CUSTOM_G0_MAPPING.update({
+    0xdf: ord("ß"),
+    0xd6: ord("Ö"),
+    0xf6: ord("ö"),
+    0xdc: ord("Ü"),
+    0xfc: ord("ü"),
+    0xc4: ord("Ä"),
+    0xe4: ord("ä"),
+    0xb0: ord("°"),
+    0xa7: ord("§"),
+})
 
 
 class DreiSAT(Scraper):
@@ -64,18 +78,44 @@ class DreiSAT(Scraper):
             [(" ", "wb") for x in range(40)]
             for y in range(26)
         ]
-        for elem in soup.find("div", {"id": "ttxbody"}).find_all("div"):
+        matrix_codes = [
+            [0] * 40
+            for y in range(26)
+        ]
+        for elem in soup.find("div", {"id": "ttxbody"}).find_all("div", recursive=False):
             style = elem["style"]
             params = dict()
             for key, regexp in self._RE_TTX_STYLES.items():
                 match = regexp.match(style)
-                params[key] = match.groups()
+                if match:
+                    params[key] = match.groups()
 
-            x, y = int(params["left"][0]) // 12, int(params["top"][0]) // 12
-            char_x, char_y = int(params["pos"][0]) // 12, int(params["pos"][1]) // 12
-            char_code = -char_x - 16 * char_y
-            char = chr(32 + char_code % 64)
+            if params.get("pos"):
 
-            matrix[y][x] = (char, "wb")
+                cls = elem["class"][0]
+                color = "w"
+                bg_color = "b"
+                is_graphic = False
+                if cls.startswith("i-ns-"):
+                    color = Teletext.rgb_to_teletext(cls[5:8])
+                    is_graphic = cls.endswith("g")
+
+                x, y = int(params["left"][0]) // 12, int(params["top"][0]) // 14
+                char_x, char_y = int(params["pos"][0]) // 12, int(params["pos"][1]) // 14
+                char_code = -char_x - 16 * char_y
+                matrix_codes[y][x] = char_code
+                #print(f"{char_code:x} ", end="")
+                if 0x60 <= char_code <= 0x7f:
+                    char = " "
+                else:
+                    if is_graphic:
+                        char = chr(Teletext.g1_to_unicode(char_code + 0x20))
+                    else:
+                        char = chr(CUSTOM_G0_MAPPING.get(char_code + 0x20) or ord("!"))
+
+                matrix[y][x] = (char, color + bg_color)
+
+        for row in matrix_codes:
+            print(" ".join(f"{c:2x}" for c in row))
 
         return Teletext.from_matrix(matrix)

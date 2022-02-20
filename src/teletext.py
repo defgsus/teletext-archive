@@ -3,7 +3,9 @@ import json
 from typing import List, Optional, TextIO, Tuple, Union
 
 from .console import ConsoleColors
-from .unico import G1_TO_UNICODE_MAPPING, G3_TO_UNICODE_MAPPING
+from .unico import (
+    G0_TO_UNICODE_MAPPING, G1_TO_UNICODE_MAPPING, G3_TO_UNICODE_MAPPING
+)
 
 
 class Colors:
@@ -191,6 +193,12 @@ class Teletext:
                 tt.add_block(block)
 
         return tt
+
+    @classmethod
+    def g0_to_unicode(cls, code: int) -> int:
+        #if code not in cls.G1_TO_UNICODE_MAPPING:
+        #    print(f"unrecognized {code:x}")
+        return G0_TO_UNICODE_MAPPING.get(code, ord("?"))
 
     @classmethod
     def g1_to_unicode(cls, code: int) -> int:
