@@ -64,12 +64,12 @@ class WDR(Scraper):
         soup = self.to_soup(content)
         tt = Teletext()
         for row in soup.find("div", {"class": "vt_table"}).find_all("div", {"class": "vt_row"}):
+            if row.find("div", {"class": "vt_row"}):
+                print(row)
+                continue
             tt.new_line()
             for elem in row.children:
                 if elem.name != "div":
-                    continue
-
-                if elem.find("div", {"class": "vt_row"}):
                     continue
 
                 for span in elem.find_all("span"):
