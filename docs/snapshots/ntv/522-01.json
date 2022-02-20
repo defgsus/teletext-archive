@@ -1,11 +1,11 @@
 {
   "subpages": {
     "subpage": [
+      "0",
       "1",
-      "2",
-      "3"
+      "2"
     ],
-    "highestsubpage": "3"
+    "highestsubpage": "2"
   },
   "content": {
     "subpage": "001",
@@ -215,7 +215,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "33",
-            "value": "5"
+            "value": "6"
           },
           {
             "font": "#FFFFFF",
@@ -233,7 +233,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "36",
-            "value": "1"
+            "value": "7"
           },
           {
             "font": "#FFFFFF",
@@ -245,7 +245,7 @@
             "font": "#FFFFFF",
             "background": "#000000",
             "index": "38",
-            "value": "0"
+            "value": "1"
           },
           {
             "font": "#FFFFFF",
@@ -6405,8 +6405,8 @@
         "index": 24
       }
     ],
-    "date": "2022-02-19 05:01:21",
+    "date": "2022-02-19 06:07:31",
     "highestsubpage": "2"
   },
-  "date": "2022-02-19 05:03:53"
+  "date": "2022-02-20 01:26:48"
 }
