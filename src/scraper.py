@@ -136,4 +136,11 @@ class Scraper:
         response = self.get_html(url=url, method=method, **kwargs)
         if response.status_code != expected_status:
             return None
-        return bs4.BeautifulSoup(response.text, features="html.parser")
+        return self.to_soup(response.text)
+
+    @classmethod
+    def to_soup(cls, markup: str) -> bs4.BeautifulSoup:
+        return bs4.BeautifulSoup(markup, features="html.parser")
+
+    def to_teletext(self, content: str):
+        raise NotImplementedError

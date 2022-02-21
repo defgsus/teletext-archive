@@ -2,7 +2,17 @@
 
 Or *videotext*, as we used to call it. 
 
-[![Scraper](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml/badge.svg)](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml)
+**DEPRECATED**: Collecting raw html files every 30 minutes is just too
+much:
+- for github: repo size is 800 mb after only 3 weeks
+- for parsing: it takes 6 single-thread hours to *beautiful-soup* through
+  all files in each commit
+  
+**A slimmer version runs at [teletext-archive-unicode](https://github.com/defgsus/teletext-archive-unicode)**
+
+Below is historical
+
+------8<------8<------8<------8<------8<------
 
 This repo exists mainly because it's just possible to scrape those
 online teletexts with github actions. And, you know, interesting
@@ -14,17 +24,17 @@ adds, overwrites or removes the individual files of each teletext page.
 
 ### scraped stations:
 
-| station                             | since      | type | link
-|:------------------------------------|:-----------|:-----|:----
-| [3sat](docs/snapshots/3sat)         | 2022-01-28 | html with font-map | https://blog.3sat.de/ttx/
-| [ARD](docs/snapshots/ard)           | 2022-01-28 | html | https://www.ard-text.de/
-| [NDR](docs/snapshots/ndr)           | 2022-01-27 | html | https://www.ndr.de/fernsehen/videotext/index.html
-| [n-tv](docs/snapshots/ntv)          | 2022-01-28 | json | https://www.n-tv.de/mediathek/teletext/
-| [SR](docs/snapshots/sr)             | 2022-01-28 | html | https://www.saartext.de/
-| [WDR](docs/snapshots/wdr)           | 2022-01-28 | html | https://www1.wdr.de/wdrtext/index.html
-| [ZDF](docs/snapshots/zdf)           | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdf/
-| [ZDFinfo](docs/snapshots/zdf-info)  | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfinfo/
-| [ZDFneo](docs/snapshots/zdf-neo)    | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfneo/
+| station                               | since      | type | link
+|:--------------------------------------|:-----------|:-----|:----
+| ✔ [3sat](docs/snapshots/3sat)         | 2022-01-28 | html with font-map | https://blog.3sat.de/ttx/
+| ✔ [ARD](docs/snapshots/ard)           | 2022-01-28 | html | https://www.ard-text.de/
+| ✔ [NDR](docs/snapshots/ndr)           | 2022-01-27 | html | https://www.ndr.de/fernsehen/videotext/index.html
+| ✔ [n-tv](docs/snapshots/ntv)          | 2022-01-28 | json | https://www.n-tv.de/mediathek/teletext/
+| ✔ [SR](docs/snapshots/sr)             | 2022-01-28 | html | https://www.saartext.de/
+| ✔ [WDR](docs/snapshots/wdr)           | 2022-01-28 | html | https://www1.wdr.de/wdrtext/index.html
+| ✔ [ZDF](docs/snapshots/zdf)           | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdf/
+| ✔ [ZDFinfo](docs/snapshots/zdf-info)  | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfinfo/
+| ✔ [ZDFneo](docs/snapshots/zdf-neo)    | 2022-01-27 | html | https://teletext.zdf.de/teletext/zdfneo/
 
 
 ### related stuff
@@ -35,6 +45,7 @@ Oh boy, look what else exists on the web:
 - http://teletext.mb21.co.uk/
 - https://www.teletextart.com/
 - https://galax.xyz/TELETEXT/
+- https://zxnet.co.uk/teletext/viewer/
 
 
 ## TODO

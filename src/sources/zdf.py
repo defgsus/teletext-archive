@@ -3,13 +3,32 @@ import json
 from typing import Dict, Generator, Tuple, Union
 
 from ..scraper import Scraper
+from ..teletext import Teletext
 
 
 class ZDFBase(Scraper):
+    """
+    TODO: they probably send the wrong encoding
+    """
 
     ABSTRACT = True
 
     ZDF_MANDANT = None
+
+
+    ENCODING_FIX_MAPPING = {
+        "Ã": "Ü",
+        "Ã¼": "ü",
+        "â": "@",
+        "Ã": "ß",
+        "Ã": "Ä",
+        "Ã¤": "ä",
+        "Ã¶": "ö",
+        "Â°": "°",
+        "Ã¿": "\x7f",
+        "Ö³": "ó",
+        "Ã": "Ö",
+    }
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         status_filename = self.path() / "status.json"
@@ -22,6 +41,7 @@ class ZDFBase(Scraper):
 
             url = f"https://teletext.zdf.de/php/options.php?mandant={self.ZDF_MANDANT}&site={page_index}"
             response = self.get_html(url)
+
             num_sub_pages, date = response.text.split(",")
             num_sub_pages = int(num_sub_pages) + 1
 
@@ -57,10 +77,55 @@ class ZDFBase(Scraper):
                 response = self.get_html(url)
 
                 if response.status_code == 200:
-                    yield page_index, sub_page_index + 1, response.text
+                    text = response.content.decode("utf-8")
+                    yield page_index, sub_page_index + 1, text
 
         self.log("writing", status_filename)
         status_filename.write_text(json.dumps(status, indent=2))
+
+    def to_teletext(self, content: str) -> Teletext:
+        for wrong, correct in self.ENCODING_FIX_MAPPING.items():
+            content = content.replace(wrong, correct)
+
+        soup = self.to_soup(content)
+        tt = Teletext()
+        for row in soup.find("div", {"id": "content"}).find_all("div", {"class": "row"}):
+            tt.new_line()
+
+            for elem in row.find_all("span"):
+                block = Teletext.Block(elem.text)
+
+                classes = elem.get("class")
+                if classes:
+                    for cls in classes:
+                        if cls.startswith("c"):
+                            block.color = Teletext.rgb_to_teletext(cls[1:])
+                        elif cls.startswith("bc"):
+                            block.bg_color = Teletext.rgb_to_teletext(cls[2:])
+
+                        elif cls == "teletextlinedrawregular":
+                            # The codes they use are almost equivalent to g1
+                            codes = [ord(c) for c in block.text]
+                            block.text = ""
+                            for c in codes:
+                                if c >= 0xa0:
+                                    # TODO: set block.char_set (which might require multiple blocks)
+                                    c -= 0x80
+                                if 0x20 <= c <= 0x3f or 0x60 <= c <= 0x7f:
+                                    c = chr(Teletext.g1_to_unicode(c))
+                                elif 0x41 == c:
+                                    c = chr(Teletext.g1_to_unicode(0x7f))
+                                elif 0xa0 == c:
+                                    c = " "
+                                else:
+                                    # print(f"mhh {c:x}")
+                                    c = "?"
+                                block.text += c
+
+                if block.text:
+                    tt.add_block(block)
+
+        return tt
 
 
 class ZDF(ZDFBase):

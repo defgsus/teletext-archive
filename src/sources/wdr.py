@@ -3,11 +3,23 @@ from typing import Dict, Generator, Tuple, Union, Optional
 import bs4
 
 from ..scraper import Scraper
+from ..teletext import Teletext
 
 
 class WDR(Scraper):
 
     NAME = "wdr"
+
+    COLOR_CLASS_MAPPING = {
+        "black": "b",
+        "red": "r",
+        "green": "g",
+        "yellow": "y",
+        "blue": "l",
+        "magenta": "m",
+        "cyan": "c",
+        "white": "w",
+    }
 
     def iter_pages(self) -> Generator[Tuple[int, int, Union[str, bool]], None, None]:
         soup = self.get_soup("https://www1.wdr.de/wdrtext/index.html")
@@ -47,3 +59,46 @@ class WDR(Scraper):
     def _replace_page_num(self, href: str, num: int) -> str:
         idx = href.index("__page__num-")
         return href[:idx+12] + str(num) + href[idx+15:]
+
+    def to_teletext(self, content: str) -> Teletext:
+        soup = self.to_soup(content)
+        tt = Teletext()
+        for row in soup.find("div", {"class": "vt_table"}).find_all("div", {"class": "vt_row"}):
+            if row.find("div", {"class": "vt_row"}):
+                print(row)
+                continue
+            tt.new_line()
+            for elem in row.children:
+                if elem.name != "div":
+                    continue
+
+                for span in elem.find_all("span"):
+                    if "invisible" in (span.get("class") or []):
+                        span.clear()
+
+                block = Teletext.Block("")
+
+                classes = elem["class"]
+                num_cols = None
+                for cls in classes:
+                    if cls in self.COLOR_CLASS_MAPPING:
+                        block.color = self.COLOR_CLASS_MAPPING[cls]
+                    elif cls[3:] in self.COLOR_CLASS_MAPPING:
+                        block.bg_color = self.COLOR_CLASS_MAPPING[cls[3:]]
+                    elif cls.startswith("col"):
+                        num_cols = int(cls[3:])
+
+                block.text = elem.find("span").text.replace("\n", "")
+                a = elem.find("a")
+                if a:
+                    block.text = a.text
+                    link = int(a["href"].split("?", 1)[0][-8:-5])
+                    block.link = link
+
+                if num_cols:
+                    block.text = block.text[:num_cols]
+
+                if block.text:
+                    tt.add_block(block)
+
+        return tt
