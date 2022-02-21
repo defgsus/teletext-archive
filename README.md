@@ -2,7 +2,17 @@
 
 Or *videotext*, as we used to call it. 
 
-[![Scraper](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml/badge.svg)](https://github.com/defgsus/teletext-archive/actions/workflows/scraper.yml)
+**DEPRECATED**: Collecting raw html files every 30 minutes is just too
+much:
+- for github: repo size is 800 mb after only 3 weeks
+- for parsing: it takes 6 single-thread hours to *beautiful-soup* through
+  all files in each commit
+  
+**A slimmer version runs at [teletext-archive-unicode](https://github.com/defgsus/teletext-archive-unicode)**
+
+Below is historical
+
+------8<------8<------8<------8<------8<------
 
 This repo exists mainly because it's just possible to scrape those
 online teletexts with github actions. And, you know, interesting
